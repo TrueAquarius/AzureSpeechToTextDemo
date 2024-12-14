@@ -1,0 +1,29 @@
+﻿<Window x:Class="AzureSpeechToTextDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AzureSpeechToTextDemo"
+        mc:Ignorable="d"
+        Title="Azure Text To Speech Demo" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="Black" Background="Azure" BorderThickness="0" Padding="10" CornerRadius="0">
+            <StackPanel>
+                <TextBlock Text="Instructions" FontWeight="Bold" FontSize="16" Margin="0,0,0,10" />
+                <TextBlock Text="This is my 'Hello World' demo for Azure Speech-to-Text. Press 'Start' to start recording your voice. Press 'Stop' to stop recording. The transscript will be shown in  the text box below. " TextWrapping="Wrap" Margin="0,0,0,5"/>
+                <TextBlock Text="Enjoy!" TextWrapping="Wrap" Margin="0,0,0,0"/>
+            </StackPanel>
+        </Border>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Background="DarkGray" VerticalAlignment="Center">
+            <Button x:Name="StartStopButton" Click="StartStopButton_Click" Width="100" Margin="10" >Start</Button>
+            <Label x:Name="StatusLabel" Margin="10">Ready.</Label>
+        </StackPanel>
+      
+        <TextBlock Grid.Row="2" x:Name="Result" Margin="5" Padding="10" />
+    </Grid>
+</Window>
